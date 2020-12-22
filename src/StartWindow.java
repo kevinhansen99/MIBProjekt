@@ -144,6 +144,46 @@ public class StartWindow extends javax.swing.JFrame {
 
     private void buttonLoginAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginAgentActionPerformed
      
+        //Hämtar användarnamn och lösenord som användare matar in.
+        String usernameIn = IdFieldAgent.getText();
+        String passwordIn = passwordAgent.getText();
+
+        //Kollar så att textfält för agent är ifyllt samt att användarnamn är en siffra.
+        if (Validation.textEmptyValidation(IdFieldAgent) && Validation.IsInt(IdFieldAgent)) {
+
+            try {
+                //Hämtar in användarnamn (agent_ID) från databasen.
+                String username = idb.fetchSingle("SELECT AGENT_ID from AGENT where AGENT_ID = " + usernameIn);
+                //Hämtar in lösenord från databasen.
+
+                String password = idb.fetchSingle("SELECT LOSENORD from AGENT where AGENT_ID = " + usernameIn);
+                //Hämtar in om användare är admin från databasen.
+                String admin = idb.fetchSingle("SELECT ADMINISTRATOR from AGENT where AGENT_ID = " + usernameIn);
+                //Kollar om användarnamn och lösenord från databasen stämmer överens med det användare matat in SAMT om användare är admin.
+                if (usernameIn.equals(username) && passwordIn.equals(password) && admin.equals("J")) {
+                    //Sparar användarens ID till ett fält som sedan kan användas av andra klasser för att hitta "ID" på vem som är inloggad.
+                    userId = username;
+                    setVisible(false);
+                    //Öppnar ny admin ruta.
+                    AdministatorWindow adminWindow = new AdministatorWindow(idb);
+                    adminWindow.setVisible(true);
+                } // Om användare skriver in rätt användarnamn OCH rätt lösenord.
+                else if (usernameIn.equals(username) && passwordIn.equals(password)) {
+                    //Sparar användarens ID till ett fält som sedan kan användas av andra klasser för att hitta "ID" på vem som är inloggad.
+                    userId = username;
+                    setVisible(false);
+                    //Öppnar ny agent (icke-admin) ruta.
+                    AgentWindow agentWindow = new AgentWindow(idb);
+                    agentWindow.setVisible(true);
+
+                } else {
+                    //Om fel användarnamn eller lösenord.
+                    JOptionPane.showMessageDialog(null, "Du har angett fel användarnamn eller lösenord");
+                }
+            } catch (InfException e) {
+                JOptionPane.showMessageDialog(null, "Ett fel inträffade!");
+            }
+        }
     }//GEN-LAST:event_buttonLoginAgentActionPerformed
 
 
