@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -35,28 +35,25 @@
                                   <Component id="jLabel3" min="-2" pref="88" max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" pref="54" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField1" min="-2" pref="78" max="-2" attributes="0"/>
-                                  <Component id="jPasswordField1" alignment="1" min="-2" pref="78" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" pref="64" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="passwordAgent" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Component id="IdFieldAgent" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Component id="buttonLoginAgent" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                          <Component id="jLabel1" min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPasswordField2" min="-2" pref="81" max="-2" attributes="0"/>
-                      <Component id="jTextField2" min="-2" pref="81" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="passwordAlien" alignment="1" max="32767" attributes="0"/>
+                  <Component id="IdFieldAlien" alignment="1" max="32767" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonLoginAlien" alignment="1" pref="81" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="114" max="32767" attributes="0"/>
           </Group>
@@ -75,18 +72,23 @@
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IdFieldAgent" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IdFieldAlien" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jPasswordField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="passwordAgent" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPasswordField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="passwordAlien" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="101" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="buttonLoginAgent" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonLoginAlien" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="67" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -148,13 +150,26 @@
         <Property name="text" type="java.lang.String" value="L&#xf6;senord:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="IdFieldAgent">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="IdFieldAlien">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+    <Component class="javax.swing.JPasswordField" name="passwordAgent">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField2">
+    <Component class="javax.swing.JPasswordField" name="passwordAlien">
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonLoginAgent">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Logga in"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLoginAgentActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonLoginAlien">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Logga in"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
