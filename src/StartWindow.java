@@ -141,7 +141,11 @@ public class StartWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public static String getuserId() {
+        return userId;
+    }
+    
     private void buttonLoginAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginAgentActionPerformed
      
         //Hämtar användarnamn och lösenord som användare matar in.
@@ -173,8 +177,9 @@ public class StartWindow extends javax.swing.JFrame {
                     userId = username;
                     setVisible(false);
                     //Öppnar ny agent (icke-admin) ruta.
-                    AgentWindow agentWindow = new AgentWindow(idb);
+                    AgentMainWindow agentWindow = new AgentMainWindow(idb);
                     agentWindow.setVisible(true);
+                    
 
                 } else {
                     //Om fel användarnamn eller lösenord.
@@ -184,6 +189,7 @@ public class StartWindow extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ett fel inträffade!");
             }
         }
+         
     }//GEN-LAST:event_buttonLoginAgentActionPerformed
 
 
